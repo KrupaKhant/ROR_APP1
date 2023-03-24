@@ -1,0 +1,76 @@
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<h1 class="header-w3ls">Signup Form</h1>
+<div class="signup-w3ls">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |form| %>
+    <div class="signup-agile1">
+      <div class="form-control">
+        <%= form.label :fname, "First Name :",class: "header" %>
+        <%= form.text_field :fname, placeholder: "First Name", title: "Please enter your First Name", required: true , id: "fname"%>
+      </div>
+
+      <div class="form-control">
+        <%= form.label :lname, "Last Name :",class: "header" %>
+        <%= form.text_field :lname, placeholder: "Last Name", title: "Please enter your Last Name", required: true, id: "lname" %>
+      </div>
+
+      <div class="form-control">
+        <%= form.label :email, "Email Address :",class: "header" %>
+        <%= form.email_field :email, placeholder: "mail@example.com", title: "Please enter a valid email", required: true , id: "email"%>
+      </div>
+
+      <div class="form-control">
+        <%= form.label :password, "Password :",class: "header" %>
+        <%= form.password_field :password, class: "lock", placeholder: "password", id: "password1", required: true %>
+      </div>
+
+      <div class="form-control">
+        <%= form.label :confirm_password, "Confirm Password :",class: "header" %>
+        <%= form.password_field :confirm_password, class: "lock", placeholder: "confirmpassword", id: "password2", required: true %>
+      </div>
+    </div>
+
+    <div class="signup-agile2">
+      <div class="form-control checkbox-container">
+        <%= form.label :tech, "Technology :",class: "header" %>
+
+        <%= form.check_box :tech, { multiple: true },"Java", nil %>
+        <%= form.label :tech, 'Java', for: "tech" %>
+
+        <%= form.check_box :tech, { multiple: true }, "ROR", nil %>
+        <%= form.label :tech, 'ROR', for: "tech" %>
+
+        <%= form.check_box :tech, { multiple: true }, ".Net", nil %>
+        <%= form.label :tech, '.Net', for: "tech" %>
+
+        <%= form.check_box :tech, { multiple: true }, "Angular", nil %>
+        <%= form.label :tech, 'Angular', for: "tech" %>
+      </div>
+
+      <div class="form-control">
+        <%= form.label :dob, "Date Of Birth :",class: "header" %>
+        <%= form.date_field :dob, required: true, id: "dob" %>
+      </div>
+
+      <div class="form-control">
+        <%= form.label :exp, "Experience :",class: "header" %>
+        <%= form.text_field :exp, placeholder: "experience", required: true, id: "exp" %>
+      </div>
+
+      <div class="form-control">
+        <%= form.label :phoneno, "Phone Number :",class: "header" %>
+        <%= form.text_field :phoneno, placeholder: "Mobile no", required: true, id: "phoneno" %>
+      </div>
+
+      <div class="form-control">
+        <%= form.label :roles, "Role :",class: "header" %>
+        <%= form.select :roles, options_for_select(Role.all.map { |r| [r.name, r.id] }), { include_blank: 'Select role' }, id: "role" %>
+      </div>
+
+    </div>
+    <%= form.button 'Register', type: 'submit',class: 'register' %>
+    <% end %>
+
+</div>
+
+
