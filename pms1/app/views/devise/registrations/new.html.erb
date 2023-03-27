@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+, class:"tech<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
 <h1 class="header-w3ls">Signup Form</h1>
 <div class="signup-w3ls">
@@ -33,18 +33,19 @@
     <div class="signup-agile2">
       <div class="form-control checkbox-container">
         <%= form.label :tech, "Technology :",class: "header" %>
-
+        <div class="check">
         <%= form.check_box :tech, { multiple: true },"Java", nil %>
-        <%= form.label :tech, 'Java', for: "tech" %>
+        <%= form.label :tech, 'Java', for: "tech" , class: "tech" %>
 
         <%= form.check_box :tech, { multiple: true }, "ROR", nil %>
-        <%= form.label :tech, 'ROR', for: "tech" %>
+        <%= form.label :tech, 'ROR', for: "tech" , class: "tech" %>
 
         <%= form.check_box :tech, { multiple: true }, ".Net", nil %>
-        <%= form.label :tech, '.Net', for: "tech" %>
+        <%= form.label :tech, '.Net', for: "tech" , class: "tech" %>
 
         <%= form.check_box :tech, { multiple: true }, "Angular", nil %>
-        <%= form.label :tech, 'Angular', for: "tech" %>
+        <%= form.label :tech, 'Angular', for: "tech" , class: "tech" %>
+        </div>
       </div>
 
       <div class="form-control">

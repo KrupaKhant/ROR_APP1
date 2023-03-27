@@ -86,16 +86,14 @@ h1.header-w3ls {
     color: #F15F22;
     font-family: 'Nunito', sans-serif;
 }
-.signup-w3ls {
-	width: 100%;
-	margin-inline: auto;
-}
-.signup-agile1 {
-    width:100%;
-    background-color: #36b051;   
+.signin-w3ls {
+	margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.signup-w3ls .signup-agile1 .form-control{
+.signin-w3ls .signin-agile1 .form-control{
     margin-bottom: 40px;
 }
 
@@ -111,7 +109,7 @@ label.header {
     display: inline-block;
     font-family: 'Nunito', sans-serif;
 }
-input#email,input#password1{
+input#emailid,input#password{
     padding:0 40px;
     width:40%;
     height:55px;
@@ -131,7 +129,7 @@ input#email,input#password1{
     -ms-border-radius:30px; 
 }
 
-input#email:focus,input#password1:focus  {
+input#emailid:focus,input#password:focus  {
     background-color:#0a101d;
     border:1px solid #36b051;
 }
@@ -179,32 +177,32 @@ color: #dadada !important;
     color:#fff;
 }
 
-.checkbox-container {
-    display: inline-flex;
-    align-items: unset;
-    font-size: 16px;
-    color: #777;
-}
+// .checkbox-container {
+//     display: inline-flex;
+//     align-items: unset;
+//     font-size: 16px;
+//     color: #777;
+// }
 
-#checkbox-label{
-    color: #fff;
-    padding: 0 18px;
-}
+// #checkbox-label{
+//     color: #fff;
+//     padding: 0 18px;
+// }
  
-  /* Custom checkmark for checked checkboxes */
-  input[type=checkbox]:checked::before {
-    content: "";
-    display: inline-block;
-    width: 13px;
-    height: 13px;
-    background-color: #999;
-    border-radius: 3px;
-    cursor: pointer;
-    margin-right: 2px;
-    outline: none;
-    border-color: #666;
-    overflow: hidden;
-  }
+//   /* Custom checkmark for checked checkboxes */
+//   input[type=checkbox]:checked::before {
+//     content: "";
+//     display: inline-block;
+//     width: 13px;
+//     height: 13px;
+//     background-color: #999;
+//     border-radius: 3px;
+//     cursor: pointer;
+//     margin-right: 2px;
+//     outline: none;
+//     border-color: #666;
+//     overflow: hidden;
+//   }
 
 /*-- responsive design --*/
 @media (max-width:1280px) {
@@ -247,7 +245,7 @@ h1.header-w3ls {
 label.header {
     font-size: 14px;
 }   
-.signup-w3ls {
+.signin-w3ls {
     margin: 50px auto 85px;
 }
 }
@@ -272,7 +270,7 @@ label.header {
 }
 
 @media (max-width: 736px) {
-.signup-w3ls {
+.signin-w3ls {
     width: 90%;
 }
 .sign_in {
@@ -305,17 +303,17 @@ p.copyright {
 }
 
 @media (max-width: 600px) {
-.register {
+.sign_in {
     width: 96%;
 }
 }
 
 @media (max-width: 480px) {
-.signup-agile1 {
+.signin-agile1 {
     width: 100%;
     float: none;
 }
-.signup-w3ls:after {
+.signin-w3ls:after {
     content: '';
     background-color: #999;
     height: 1px;
@@ -325,10 +323,10 @@ p.copyright {
     top: 60%;
     position: absolute;
 }
-.signup-agile1 {
+.signin-agile1 {
     margin-bottom: 70px;
 }
-.signup-w3ls {
+.signin-w3ls {
     text-align: center;
 }
 label.header {
@@ -350,7 +348,7 @@ label.header {
 }
 
 @media (max-width: 384px) {
-.signup-w3ls {
+.signin-w3ls {
     margin: 30px auto 40px;
 }
 label.header {

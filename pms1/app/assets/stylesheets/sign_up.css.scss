@@ -97,6 +97,7 @@ h1.header-w3ls {
     padding: 0;
     display: table;
     position: relative;
+    margin-top: 50px;
 }
 .signup-agile1,.signup-agile2 {
     width:50%;
@@ -145,7 +146,6 @@ input#fname,input#lname,input#email,input#password1,input#password2  ,#dob ,inpu
     -ms-border-radius:30px; 
 }
 #role{
-
     padding:0 40px;
     height:55px;
     border: 1px solid #dadada;
@@ -165,21 +165,6 @@ input#fname,input#lname,input#email,input#password1,input#password2  ,#dob ,inpu
     color : #e1d7d7;
 }
 
-// #tech{
-//     // color: white;
-//     padding:0 1px;
-//     width:10%;
-//     height:20px;
-//     // border: 1px solid #dadada;
-//     color: #fff;
-//     text-align:justify;
-//     outline: none;
-//     letter-spacing: 1px;
-//     font-size: 16px;
-//     font-weight:normal;
-//     font-family: 'Muli', sans-serif;
-//     background-color:transparent;
-// }
 
 input#fname:focus,input#lname:focus,input#email:focus,input#password1:focus,input#password2:focus  {
     background-color:#0a101d;
@@ -230,30 +215,26 @@ color: #dadada !important;
     display: inline-flex;
     align-items: unset;
     font-size: 16px;
-    color: #777;
+    color: #fff;    
 }
-
-#checkbox-label{
+.check{
+    width: 80%;
+    height: 55px;
+}
+.tech{
+    padding: 0 10px;
+    height:55px;
     color: #fff;
-    padding: 0 18px;
-}
-
-
-  
-  /* Custom checkmark for checked checkboxes */
-  input[type=checkbox]:checked::before {
-    content: "";
-    display: inline-block;
-    width: 13px;
-    height: 13px;
-    background-color: #999;
-    border-radius: 3px;
-    cursor: pointer;
-    margin-right: 2px;
+    text-align:justify;
     outline: none;
-    border-color: #666;
-    overflow: hidden;
-  }
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight:normal;
+    font-family: 'Muli', sans-serif;
+}
+// input[type=checkbox]{
+//     height: 55px;
+// }
 
 /*-- responsive design --*/
 @media (max-width:1280px) {
