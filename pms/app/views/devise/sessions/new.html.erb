@@ -1,26 +1,37 @@
-<h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+<h1 class="header-w3ls">SignIn Form</h1>
+<div class="signin-w3ls">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |form| %>
+    <div class="signin-agile1">
+        <div class="form-control">
+          <%= form.label :email, "Email Address :",class: "header" %>
+          <%= form.email_field :email, placeholder: "mail@example.com", title: "Please enter a valid email", required: true , id: "emailid"%>
+        </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+        <div class="form-control">
+          <%= form.label :password, "Password :",class: "header" %>
+          <%= form.password_field :password, class: "lock", placeholder: "password", id: "password", required: true %>
+        </div>
+  
+        <% if devise_mapping.rememberable? %>
+          <div class="form-control">
+            <%= form.check_box :remember_me %>
+            <%= form.label :remember_me %>
+          </div>
+        <% end %>
+
+        <%= form.button 'SignIn', type: 'submit',class: 'sign_in' %>
+        <div class="form-control">
+          <%= render "devise/shared/links" %>
+        </div>
     </div>
+ 
   <% end %>
+</div>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+<%# <%= button_to "logout" , destroy_user_session_path,method: :delete%>
 
-<%= render "devise/shared/links" %>
+
+  

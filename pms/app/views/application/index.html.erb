@@ -6,6 +6,7 @@ table td {
  td {
   padding: 15px;
 }
+
 </style>
 <h1>All Users</h1>
 <table>
@@ -16,3 +17,5 @@ table td {
         </tr>
 <% end %>
 </table>
+
+<%= button_to "logout" , destroy_user_session_path,method: :delete%>

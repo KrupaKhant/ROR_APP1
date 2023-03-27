@@ -15,4 +15,5 @@ class RolifyCreateRoles < ActiveRecord::Migration[6.1]
     add_index(:roles, [ :name, :resource_type, :resource_id ])
     add_index(:users_roles, [ :user_id, :role_id ])
   end
+  
 end

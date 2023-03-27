@@ -10,10 +10,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
-
+  def create
+    super
+    resource.add_role Role.find(params[:user][:roles]).name.to_sym 
+    params[:user][:tech] = params[:user][:tech].to_json
+  end
+  
   # GET /resource/edit
   # def edit
   #   super
@@ -59,7 +61,5 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
-
-  
 
 end

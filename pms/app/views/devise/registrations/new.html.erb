@@ -1,63 +1,76 @@
-<h2>Sign up</h2>
+, class:"tech<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<h1 class="header-w3ls">Signup Form</h1>
+<div class="signup-w3ls">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |form| %>
+    <div class="signup-agile1">
+      <div class="form-control">
+        <%= form.label :fname, "First Name :",class: "header" %>
+        <%= form.text_field :fname, placeholder: "First Name", title: "Please enter your First Name", required: true , id: "fname"%>
+      </div>
 
-  <div class="field">
-    <%= f.label :fname %><br />
-    <%= f.text_field :fname, autofocus: true, autocomplete: "fname" %>
-  </div>
+      <div class="form-control">
+        <%= form.label :lname, "Last Name :",class: "header" %>
+        <%= form.text_field :lname, placeholder: "Last Name", title: "Please enter your Last Name", required: true, id: "lname" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :Lname %><br />
-    <%= f.text_field :lname, autofocus: true, autocomplete: "lname" %>
-  </div>
+      <div class="form-control">
+        <%= form.label :email, "Email Address :",class: "header" %>
+        <%= form.email_field :email, placeholder: "mail@example.com", title: "Please enter a valid email", required: true , id: "email"%>
+      </div>
 
-  <div class="field">
-    <%= f.label :MobileNo %><br />
-    <%= f.text_field :phoneno, autofocus: true, autocomplete: "phoneno" %>
-  </div>
+      <div class="form-control">
+        <%= form.label :password, "Password :",class: "header" %>
+        <%= form.password_field :password, class: "lock", placeholder: "password", id: "password1", required: true %>
+      </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+      <div class="form-control">
+        <%= form.label :confirm_password, "Confirm Password :",class: "header" %>
+        <%= form.password_field :confirm_password, class: "lock", placeholder: "confirmpassword", id: "password2", required: true %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :dob %><br />
-    <%= f.date_select :dob%>
-  </div>
+    <div class="signup-agile2">
+      <div class="form-control checkbox-container">
+        <%= form.label :tech, "Technology :",class: "header" %>
 
-  <div class="field">
-    <%= f.label :Experience %><br />
-    <%= f.text_field :exp, autofocus: true, autocomplete: "exp" %>
-  </div>
+        <%= form.check_box :tech, { multiple: true },"Java", nil %>
+        <%= form.label :tech, 'Java', for: "tech" , class: "tech" %>
 
-  <div class="field">
-    <%= f.label :Technology %><br />
-    <%= f.text_field :tech, autofocus: true, autocomplete: "tech" %>
-  </div>
+        <%= form.check_box :tech, { multiple: true }, "ROR", nil %>
+        <%= form.label :tech, 'ROR', for: "tech" , class: "tech" %>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+        <%= form.check_box :tech, { multiple: true }, ".Net", nil %>
+        <%= form.label :tech, '.Net', for: "tech" , class: "tech" %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+        <%= form.check_box :tech, { multiple: true }, "Angular", nil %>
+        <%= form.label :tech, 'Angular', for: "tech" , class: "tech" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :role%><br />
-    <%= f.select :roles,["admin", "manager", "emplyoee"] %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+      <div class="form-control">
+        <%= form.label :dob, "Date Of Birth :",class: "header" %>
+        <%= form.date_field :dob, required: true, id: "dob" %>
+      </div>
 
-<%= render "devise/shared/links" %>
+      <div class="form-control">
+        <%= form.label :exp, "Experience :",class: "header" %>
+        <%= form.text_field :exp, placeholder: "experience", required: true, id: "exp" %>
+      </div>
+
+      <div class="form-control">
+        <%= form.label :phoneno, "Phone Number :",class: "header" %>
+        <%= form.text_field :phoneno, placeholder: "Mobile no", required: true, id: "phoneno" %>
+      </div>
+
+      <div class="form-control">
+        <%= form.label :roles, "Role :",class: "header" %>
+        <%= form.select :roles, options_for_select(Role.all.map { |r| [r.name, r.id] }), { include_blank: 'Select role' }, id: "role" %>
+      </div>
+
+    </div>
+    <%= form.button 'Register', type: 'submit',class: 'register' %>
+    <% end %>
+
+</div>
+
+
