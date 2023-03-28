@@ -1,0 +1,44 @@
+
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<div class="cont">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form sign-in">
+      <h2>Welcome</h2>
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
+      <div class="feild check-box-container">
+        <%= f.check_box :remember_me , class: "remember"%>
+        <%= f.label :remember_me, class: "checkbox-label"%>
+      </div>
+      <%# <%= link_to "Forgot password?", new_password_path(resource_name), class: "forgot-pass" %> 
+      <%= button_to "Sign In", session_path(resource_name), method: :post, class: "submit" %>
+      <%= render "devise/shared/links" %>
+      
+    </div>
+  <% end %>
+  <div class="sub-cont">
+    <div class="img">
+      <div class="img__text m--up">
+        <h3>Don't have an account? Please!!</h3>
+        <div class="img__btn">
+        <span class="m--up">
+            <%= link_to "Sign up", new_registration_path(resource_name), style: "color: #fff; text-decoration: none; " %><br>
+        </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%# <%= button_to "logout" , destroy_user_session_path,method: :delete%>
+
+
+  

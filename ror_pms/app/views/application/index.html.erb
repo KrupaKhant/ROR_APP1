@@ -1,0 +1,21 @@
+<style>
+table td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+ td {
+  padding: 15px;
+}
+
+</style>
+<h1>All Users</h1>
+<table>
+<% @users.each do |user|%>
+
+        <tr>
+        <td><%= user.email%></td>
+        </tr>
+<% end %>
+</table>
+
+<%= button_to "logout" , destroy_user_session_path,method: :delete%>

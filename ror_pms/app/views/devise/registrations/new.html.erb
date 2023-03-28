@@ -1,0 +1,67 @@
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<div class="container">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <div class="form sign-in">
+      <h2>Create your Account</h2>
+      <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label :phoneno %>
+        <%= f.text_field :phoneno, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
+      <div class="field">
+        <%= f.label :confirm_password %>
+        <%= f.password_field :password_confirmation %>
+      </div>
+      <div class="field">
+        <%= f.label :Experience %>
+        <%= f.text_field :exp, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label :technology%>
+        <div class="checkbox-cont">
+        <%= f.check_box :tech, { multiple: true },"Java", nil %>
+        <%= f.label :tech, 'Java', for: "tech",class: "checkbox-label1" %>
+
+        <%= f.check_box :tech, { multiple: true },"ROR", nil %>
+        <%= f.label :tech, 'ROR', for: "tech", class: "checkbox-label1"  %>
+
+        <%= f.check_box :tech, { multiple: true },".Net", nil %>
+        <%= f.label :tech, '.Net', for: "tech", class: "checkbox-label1"  %>
+
+        <%= f.check_box :tech, { multiple: true },"Angular", nil %>
+        <%= f.label :tech, 'Angular', for: "tech", class: "checkbox-label1"  %>
+      </div>
+      </div>
+      <div class="feild">
+        <%= f.label :roles %>
+        <%= f.select :roles, options_for_select(Role.all.map { |r| [r.name, r.id] }), { include_blank: 'Select role' }, id: "role" %>
+      </div>
+      <%= f.button "Sign Up", class: "submit" %> 
+    </div>
+  <% end %>
+  <div class="sub-cont">
+    <div class="img">
+      
+      <div class="img__text m--up">
+        <h3>If you already have an account, just sign in.</h3>
+        <div class="img__btn">
+          <span class="m--up">
+            <%= link_to "Sign in", new_session_path(resource_name), style: "color: #fff; text-decoration: none; " %><br>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
